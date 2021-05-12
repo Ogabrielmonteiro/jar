@@ -10,3 +10,12 @@ sudo apt update
 
 #Instalando a nossa aplicação
 
+#Criando pasta do nosso projeto
+mkdir /home/Quality-System
+
+#Entrando na pasta
+cd /home/Quality-System
+
+#Clonando repositorio do GIT
+sudo apt-add-repository 'https://github.com/Ogabrielmonteiro/jar.git'
+
