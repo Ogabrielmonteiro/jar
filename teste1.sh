@@ -11,11 +11,17 @@ sudo apt update
 #Instalando a nossa aplicação
 
 #Criando pasta do nosso projeto
-mkdir /home/ubuntu/Desktop/Quality-System
+mkdir /home/$USER/Desktop/Quality-System
 
 #Entrando na pasta
-cd /home/ubuntu/Desktop/Quality-System
+cd /home/$USER/Desktop/Quality-System
 
 #Clonando repositorio do GIT
 git clone https://github.com/Ogabrielmonteiro/jar.git
+
+#Entrando na pasta do clone
+cd /home/$USER/Desktop/Quality-System/jar/3.0
+
+#Executando o jar
+java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
 
