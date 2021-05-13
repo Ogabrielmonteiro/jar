@@ -20,10 +20,12 @@ cd /home/$USER/Desktop/Quality-System
 git clone https://github.com/Ogabrielmonteiro/jar.git
 
 #Entrando na pasta do clone
-cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
+cd /home/$USER/Desktop/Quality-System/jar/3.0
 
 #Instalando o jdk 11
-sudo apt-get install openjdk-11-jre-headless -y
+sudo apt install default-jre -y
+
+#Entrando na pasta do jar
 
 #Executando o jar
 java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
