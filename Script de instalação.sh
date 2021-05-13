@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Olá"whoami",já vamos começar a sua intalação."
+echo "Olá"$USER",já vamos começar a sua intalação."
 
 ## Removendo travas eventuais do apt ##
 
@@ -8,7 +8,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 echo "Deseja atualizar seu repositorio? (sim/não)"
 read repositorio
 
-if [“$numero” = sim]
+if [“$repositorio” = sim]
 then
 ## Atualizando o repositório ##
 sudo apt update
