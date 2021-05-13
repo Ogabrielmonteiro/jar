@@ -8,7 +8,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 echo "Deseja atualizar seu repositorio? (sim/não)"
 read repositorio
 
-if [“$repositorio” = sim]
+if [“$repositorio” == sim]
 then
 ## Atualizando o repositório ##
 sudo apt update
