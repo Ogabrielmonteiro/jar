@@ -1,14 +1,16 @@
 #!/bin/bash
-echo "Olá "$USER",já vamos começar a sua intalação."
-echo "Deseja atualizar seu repositorio e instalar o java para rodar o programa? (sim/nao)"
-read repositorio
-
-if [$repositorio == "sim"];
-then
-## Atualizando o repositório ##
-sudo apt update
-
-#Criando pasta do nosso projeto
+  echo "Selecione uma opção:"
+  echo "1 - Atualizar repositorio"
+  echo "2 - Instalar o java junto com o jar"
+  echo "3 - Executar o jar”
+ read opcao;
+  case $opcao in
+   “1”)
+      ## Atualizando o repositório ##
+      sudo apt update
+      ;;
+   “2”)
+     #Criando pasta do nosso projeto
 mkdir /home/$USER/Desktop/Quality-System
 
 #Entrando na pasta
@@ -25,15 +27,13 @@ cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
 
 #Executando o jar
 java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
-
-elif [$repositorio == "nao"];
-then
-echo "OK, vou abrir o programa direto"
-
-#Entrando na pasta do clone
+   ;;
+   “3”)
+    #Entrando na pasta do clone
 cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
 
 #Executando o jar
 java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
 fi
-
+  ;;
+esac
