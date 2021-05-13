@@ -1,13 +1,19 @@
 #!/bin/bash
+echo "Olá"whoami",já vamos começar a sua intalação.
 
 ## Removendo travas eventuais do apt ##
 
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 
-## Atualizando o repositório ##
+echo "Deseja atualizar seu repositorio? (sim/não)
+read repositorio
 
+if [“$numero” = sim]
+then
+## Atualizando o repositório ##
 sudo apt update
 
+else
 #Instalando a nossa aplicação
 
 #Criando pasta do nosso projeto
