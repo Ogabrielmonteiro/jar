@@ -4,16 +4,13 @@
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 
 echo "Olá "$USER",já vamos começar a sua intalação."
-echo "Deseja atualizar seu repositorio? (sim/não)"
+echo "Deseja atualizar seu repositorio e instalar o java para rodar o programa? (sim/nao)"
 read repositorio
 
-if [$repositorio == "sim"]
+if [$repositorio == "sim"];
 then
 ## Atualizando o repositório ##
 sudo apt update
-
-else
-#Instalando a nossa aplicação
 
 #Criando pasta do nosso projeto
 mkdir /home/$USER/Desktop/Quality-System
@@ -32,4 +29,15 @@ cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
 
 #Executando o jar
 java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+elif [$repositorio == "nao"];
+then
+echo "OK, vou abrir o programa direto"
+
+#Entrando na pasta do clone
+cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
+
+#Executando o jar
+java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
+fi
 
