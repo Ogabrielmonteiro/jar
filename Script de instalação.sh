@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Olá"whoami",já vamos começar a sua intalação.
+echo "Olá"whoami",já vamos começar a sua intalação."
 
 ## Removendo travas eventuais do apt ##
 
