@@ -3,7 +3,7 @@ echo "Olá "$USER", bem-vindo ao script de instalação da Quality System."
 echo "Estamos verificando sua versão do java..."
 
 sleep 2
-java -version
+java --version
 if [ $? -eq 0 ]
     then
         echo "Legal! Você já possui o Java instalado."
