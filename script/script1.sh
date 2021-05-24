@@ -4,41 +4,41 @@ echo "Estamos verificando sua versão do java..."
 
 sleep 2
 java --version
-if [ $? > 0 ]; 
+if [ $? -eq 0 ]; 
 then
     echo "Legal! Você já possui o Java instalado."
-    echo "Deseja instalar nossa aplicação? (sim/nao)"
+    echo "Deseja instalar nossa aplicação? (s/nao)"
     read installAplication
 
-    if [ \"$installAplication\" == \"sim\" ]; 
-    then
-        mkdir /home/$USER/Desktop/Quality-System
-        cd /home/$USER/Desktop/Quality-System
+    if [ \"$installAplication\" == \"s\" ]; 
+        then
+            mkdir /home/$USER/Desktop/Quality-System
+            cd /home/$USER/Desktop/Quality-System
 
-        git clone https://github.com/Ogabrielmonteiro/jar.git
+            git clone https://github.com/Ogabrielmonteiro/jar.git
 
-        sleep 2
-        clear
+            sleep 2
+            clear
 
-        echo "Você deseja abrir o software agora? (sim/nao)"
-        read abrir
+            echo "Você deseja abrir o software agora? (s/nao)"
+            read abrir
 
-        if [ \"abrir\" == \"sim\" ]; then
-            cd /home/$USER/Desktop/Quality-System/jar/jarProjeto 
+            if [ \"abrir\" == \"s\" ]; then
+                cd /home/$USER/Desktop/Quality-System/jar/jarProjeto 
 
-            
+                
 
-            java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
+                java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
+            fi
+        else
+            echo "Você optou por não instalar o software, até a próxima."
         fi
-    else
-        echo "Você optou por não instalar o software, até a próxima."
-    fi
 else
     echo "Não foi identificado nenhuma versão do Java =("
-    echo "Você deseja realizar a instalão do Java? (sim/nao)"
+    echo "Você deseja realizar a instalão do Java? (s/nao)"
     read install
 
-    if [ \"$install\" == \"sim\" ]; 
+    if [ \"$install\" == \"s\" ]; 
     then
         echo "Vamos realizar os updates dos pacotes..."
         sleep 2
@@ -58,10 +58,10 @@ else
 
         sleep 2
 
-        echo "Deseja realizar a instalação do software da Quality System? (sim/nao)"
+        echo "Deseja realizar a instalação do software da Quality System? (s/nao)"
         read repositorio
 
-        if [ \"$repositorio\" == \"sim\" ]; 
+        if [ \"$repositorio\" == \"s\" ]; 
         then
             mkdir /home/$USER/Desktop/Quality-System
             cd /home/$USER/Desktop/Quality-System
@@ -71,10 +71,10 @@ else
             sleep 2
             clear
 
-            echo "Você deseja abrir o software agora? (sim/nao)"
+            echo "Você deseja abrir o software agora? (s/nao)"
             read abrir
 
-            if [ \"abrir\" == \"sim\" ]; 
+            if [ \"abrir\" == \"s\" ]; 
             then
                 cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
 
