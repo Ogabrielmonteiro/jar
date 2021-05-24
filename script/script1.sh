@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 echo "Olá "$USER", bem-vindo ao script de instalação da Quality System."
 echo "Estamos verificando sua versão do java..."
 
@@ -8,9 +8,9 @@ if [ $? -eq 0 ];
 then
     echo "Legal! Você já possui o Java instalado."
     echo "Deseja instalar nossa aplicação? (s/nao)"
-    read installAplication
+    read macaco
 
-    if [ \"$installAplication\" == \"s\" ]; 
+    if [ \"$macaco\" == \"s\" ]; 
         then
             mkdir /home/$USER/Desktop/Quality-System
             cd /home/$USER/Desktop/Quality-System
