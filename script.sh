@@ -7,6 +7,29 @@ java --version
 if [ $? -eq 0 ]
     then
         echo "Legal! Você já possui o Java instalado."
+        echo "Deseja instalar nossa aplicação? (sim/nao)"
+        read instalacaoRepositorio
+        if [ \"$instalacaoRepositorio\" == \"sim\" ]
+                    then
+                        mkdir /home/$USER/Desktop/Quality-System
+                        cd /home/$USER/Desktop/Quality-System
+
+                        git clone https://github.com/Ogabrielmonteiro/jar.git
+
+                        sleep 2
+                        clear
+
+                        echo "Você deseja abrir o software agora? (sim/nao)"
+                        read abrir
+
+                        if [ \"abrir\" == \"sim\" ]
+                            then
+                                cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
+                                java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
+                        fi
+                    else
+                        echo "Você optou por não instalar o software, até a próxima."
+                fi
     else
         echo "Não foi identificado nenhuma versão do Java =("
         echo "Você deseja realizar a instalão do Java? (sim/nao)"
@@ -35,7 +58,7 @@ if [ $? -eq 0 ]
                 echo "Deseja realizar a instalação do software da Quality System? (sim/nao)"
                 read repositorio
 
-                if [\"$repositorio\" == \"sim\"]
+                if [ \"$repositorio\" == \"sim\" ]
                     then
                         mkdir /home/$USER/Desktop/Quality-System
                         cd /home/$USER/Desktop/Quality-System
