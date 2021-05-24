@@ -42,9 +42,11 @@ instalar_aplicacao() {
 instalar_java() {
     echo "Não foi identificado nenhuma versão do Java =("
     echo "Você deseja realizar a instalão do Java? (s/nao)"
-    read java
+    read confirm
 
-    if [ \"$java\" == \"s\" ]; then
+    if [ \"$confirm\" == \"s\" ];
+    then
+
         echo "Vamos realizar os updates dos pacotes..."
         sleep 1
         sudo add-apt-repository ppa:webupd8team/java -y
