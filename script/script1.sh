@@ -66,7 +66,7 @@ instalar_java() {
         else
             echo "Okay, você optou por não instalar o Java no momento, até a próxima."
             exit 0
-
+    fi
 }
 
 verificar_java() {
@@ -76,6 +76,7 @@ verificar_java() {
         else
             echo "Legal! Você já possui o Java instalado."
             instalar_aplicacao
+    fi
 }
 
 verificar_java
