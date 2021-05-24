@@ -30,7 +30,9 @@ then
 
             java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
         fi
-
+    else
+        echo "Você optou por não instalar o software, até a próxima."
+    fi
 else
     echo "Não foi identificado nenhuma versão do Java =("
     echo "Você deseja realizar a instalão do Java? (sim/nao)"
