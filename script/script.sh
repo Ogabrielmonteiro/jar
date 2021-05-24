@@ -26,7 +26,7 @@ then
         if [ \"abrir\" == \"sim\" ]; then
             cd /home/$USER/Desktop/Quality-System/jar/jarProjeto 
 
-            sleep 2
+            
 
             java -jar teste-api-1.0-SNAPSHOT-jar-with-dependencies.jar
         fi
