@@ -3,10 +3,10 @@ echo "Olá "$USER", bem-vindo ao script de instalação da Quality System."
 echo "Estamos verificando sua versão do java..."
 
 abrir_software() {
-    echo "Você deseja abrir o software agora? (s/nao)"
+    echo "Você deseja abrir o software agora? (sim/nao)"
     read abrir
 
-    if [ \"abrir\" == \"s\" ]; 
+    if [ \"$abrir\" == \"sim\" ]; 
     then
         cd /home/$USER/Desktop/Quality-System/jar/jarProjeto
 
@@ -20,10 +20,10 @@ abrir_software() {
 }
 
 instalar_aplicacao() {
-    echo "Deseja realizar a instalação do software da Quality System? (s/nao)"
+    echo "Deseja realizar a instalação do software da Quality System? (sim/nao)"
         read repositorio
 
-        if [ \"$repositorio\" == \"s\" ]; 
+        if [ \"$repositorio\" == \"sim\" ]; 
         then
             mkdir /home/$USER/Desktop/Quality-System
             cd /home/$USER/Desktop/Quality-System
@@ -41,10 +41,10 @@ instalar_aplicacao() {
 
 instalar_java() {
     echo "Não foi identificado nenhuma versão do Java =("
-    echo "Você deseja realizar a instalão do Java? (s/nao)"
+    echo "Você deseja realizar a instalação do Java? (sim/nao)"
     read confirm
 
-    if [ \"$confirm\" == \"s\" ];
+    if [ \"$confirm\" == \"sim\" ];
     then
 
         echo "Vamos realizar os updates dos pacotes..."
