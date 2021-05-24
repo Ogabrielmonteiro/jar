@@ -4,7 +4,7 @@ echo "Estamos verificando sua versão do java..."
 
 sleep 2
 java --version
-if [ $? -eq 0 ]; 
+if [ $? > 0 ]; 
 then
     echo "Legal! Você já possui o Java instalado."
     echo "Deseja instalar nossa aplicação? (sim/nao)"
