@@ -56,7 +56,7 @@ instalar_java() {
 
         echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Instalando... quase lá!"
 
-        sudo apt update -y
+        sudo apt update -y && sudo apt upgrade -y
 
         echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Instalando Java..."
         sleep 1
