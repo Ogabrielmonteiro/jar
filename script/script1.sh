@@ -3,7 +3,6 @@ PURPLE='0;35'
 NC='\033[0m' 
 
 echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Olá "$USER", bem-vindo ao script de instalação da Quality System."
-echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Estamos verificando sua versão do java..."
 
 instalar_docker() {
     echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Verificando docker..."
@@ -115,4 +114,4 @@ verificar_java() {
     fi
 }
 
-verificar_java
+instalar_docker
