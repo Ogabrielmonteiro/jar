@@ -14,8 +14,9 @@ instalar_docker() {
     then
         echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Você já possui o docker instalado!"
         sudo docker start ProjetoPI
+
+        verificar_java
         
-        instalar_java
     else
         echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Você deseja instalar o docker? (sim/nao)"
         read docker
@@ -30,7 +31,7 @@ instalar_docker() {
 
             sudo docker run -d -p 3306:3306 --name ProjetoPI -e "MYSQL_DATABASE=qualitySystem" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
         
-            instalar_java
+            verificar_java
         fi
     fi
 }
@@ -107,7 +108,7 @@ instalar_java() {
 verificar_java() {
     if [ "$(dpkg --get-selections | grep 'default-jre' | wc -l)" -eq "0" ]; 
         then
-            instalar_docker
+            instalar_java
         else
             echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Legal! Você já possui o Java instalado."
             instalar_aplicacao
