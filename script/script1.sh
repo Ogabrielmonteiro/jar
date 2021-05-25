@@ -5,6 +5,36 @@ NC='\033[0m'
 echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Olá "$USER", bem-vindo ao script de instalação da Quality System."
 echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Estamos verificando sua versão do java..."
 
+instalar_docker() {
+    echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Verificando docker..."
+    sleep 2
+
+    docker --version
+    if [ $? -eq 0 ]
+    then
+        echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Você já possui o docker instalado!"
+        sudo docker start ProjetoPI
+        
+        instalar_java
+    else
+        echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Você deseja instalar o docker? (sim/nao)"
+        read docker
+
+        if [ \"$docker\" == \"sim\" ];
+        then
+            sudo apt install docker.io
+            sudo systemctl start docker
+
+            sudo systemctl enable docker
+            sudo docker pull mysql:5.7
+
+            sudo docker run -d -p 3306:3306 --name ProjetoPI -e "MYSQL_DATABASE=qualitySystem" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+        
+            instalar_java
+        fi
+    fi
+}
+
 abrir_software() {
     echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Você deseja abrir o software agora? (sim/nao)"
     read abrir
@@ -77,7 +107,7 @@ instalar_java() {
 verificar_java() {
     if [ "$(dpkg --get-selections | grep 'default-jre' | wc -l)" -eq "0" ]; 
         then
-            instalar_java
+            instalar_docker
         else
             echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Legal! Você já possui o Java instalado."
             instalar_aplicacao
