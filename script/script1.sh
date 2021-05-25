@@ -22,11 +22,28 @@ instalar_docker() {
 
         if [ \"$docker\" == \"sim\" ];
         then
-            sudo apt install docker.io
+            echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Instalando Docker..."
+            sleep 3
+
+            sudo apt install docker.io -y
+            echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Startando docker..."
+            sleep 3
+
             sudo systemctl start docker
 
+            echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Habilitando docker..."
+            sleep 3
+
             sudo systemctl enable docker
+
+            echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Baixando imagem do Mysql..."
+            sleep 3
+
             sudo docker pull mysql:5.7
+
+            echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Criando container do Mysql..."
+            sleep 3
+
 
             sudo docker run -d -p 3306:3306 --name ProjetoPI -e "MYSQL_DATABASE=qualitySystem" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
         
