@@ -44,9 +44,11 @@ instalar_docker() {
             echo "$(tput setaf 10)[Manivela]:$(tput setaf 7) Criando container do Mysql..."
             sleep 3
 
-
             sudo docker run -d -p 3306:3306 --name ProjetoPI -e "MYSQL_DATABASE=qualitySystem" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
         
+            chmod 777 tabelas.sh
+            ./tabelas.sh
+
             verificar_java
         fi
     fi
